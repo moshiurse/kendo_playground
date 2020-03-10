@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendo Playground</title>
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.1.219/styles/kendo.material-v2.min.css" />
+
+    <script src="https://kendo.cdn.telerik.com/2020.1.219/js/jquery.min.js"></script>
+    
+    
+    <script src="https://kendo.cdn.telerik.com/2020.1.219/js/angular.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.1.219/js/kendo.all.min.js"></script>
+
+</head>
+<body ng-app="myapp">
+    <h2>Kendo Ui Playground</h2>
+
+    <div class="demo-section k-content" ng-controller="KendoController">
+        <div class="box-col">
+            <h4>Set Value</h4>
+            <p>
+                <input kendo-numeric-text-box k-min="0" k-max="100" k-ng-model="value" style="width: 40%;" />
+            </p>
+        </div>
+        <div class="box-col">
+            <h4>Set Value</h4>
+            <div kendo-slider k-min="0" k-max="100" k-ng-model="value"></div>
+        </div>
+        <div class="box-col">
+            <h4>Result</h4>
+            Value: {{value}}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    angular.module("myapp", [ "kendo.directives" ])
+        .controller("KendoController", function($scope){
+            $scope.value = 50;
+        })
+  </script>
